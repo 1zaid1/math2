@@ -136,7 +136,7 @@ function mousePressed() {
 }
 
 function keyPressed() {
-    if (key == 'x') {
+    if (key == 'x' && p.length != 1) {
         if (p.length) p.pop();
         update();
         render();
