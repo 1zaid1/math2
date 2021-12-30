@@ -1,4 +1,4 @@
-let p = [], q = [];
+let p = [], q = [], dx, dy;
 function Point(x, y) {
     this.x = x;
     this.y = y;
@@ -115,7 +115,9 @@ function setup() {
     cnv = createCanvas(500, 500);
     let canv = document.getElementById(cnv.id());
     canv.style.left = window.innerWidth/2 - width/2 + "px";
+    dx = window.innerWidth/2 - width/2;
     canv.style.top = window.innerHeight/2 - height/2 + "px";
+    dx = window.innerHeight/2 - height/2;
     canv.style.position = "absolute";
     translate(width/2, height/2);
     stroke(255);
@@ -138,18 +140,23 @@ function mousePressed() {
     background(0);
     update();
     render();
-
 }
 
-function keyPressed() {
-    if (key == 'x' && p && p.length > 1) {
+function popo() {
+    if (p && p.length > 1) {
         p.pop();
         update();
         render();
-    } else if (key == 'x') {
+    } else {
         p = [];
         q = [];
         render();
+    }
+}
+
+function keyPressed() {
+    if (key == 'x') {
+        popo();
     }
 }
 function draw() {}
