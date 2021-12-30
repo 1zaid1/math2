@@ -112,7 +112,11 @@ function update() {
 }
 
 function setup() {
-    createCanvas(500, 500);
+    let cnv = createCanvas(500, 500);
+    let canv = document.getElementById(cnv.id());
+    canv.style.left = window.innerWidth/2 - width/2 + "px";
+    canv.style.top = window.innerHeight/2 - height/2 + "px";
+    canv.style.position = "absolute";
     translate(width/2, height/2);
     stroke(255);
     noFill();
