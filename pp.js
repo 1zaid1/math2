@@ -1,5 +1,5 @@
 let p = [], q = [];
-function Point(x,y) {
+function Point(x, y) {
     this.x = x;
     this.y = y;
 
@@ -112,7 +112,7 @@ function update() {
 }
 
 function setup() {
-    let cnv = createCanvas(500, 500);
+    cnv = createCanvas(500, 500);
     let canv = document.getElementById(cnv.id());
     canv.style.left = window.innerWidth/2 - width/2 + "px";
     canv.style.top = window.innerHeight/2 - height/2 + "px";
@@ -131,7 +131,7 @@ function trm() {
 }
 
 function mousePressed() {
-    if (p.length==8) return;
+    if (p.length == 8) return;
     p.push(new Point(mouseX, mouseY));
     trm();
     background(0);
