@@ -136,9 +136,13 @@ function mousePressed() {
 }
 
 function keyPressed() {
-    if (key == 'x' && p.length != 1) {
-        if (p.length) p.pop();
+    if (key == 'x' && p && p.length > 1) {
+        p.pop();
         update();
+        render();
+    } else if (key == 'x') {
+        p = [];
+        q = [];
         render();
     }
 }
