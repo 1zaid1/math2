@@ -131,6 +131,7 @@ function trm() {
 }
 
 function mousePressed() {
+    if (mouseX < 0 || mouseY < 0 || mouseX  > width || mouseY > height) return;
     if (p.length == 8) return;
     p.push(new Point(mouseX, mouseY));
     trm();
