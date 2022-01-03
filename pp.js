@@ -68,10 +68,13 @@ function f(x) {
 function render() {
     // for (let i = 0; i < q.length; i++) console.log(q[i].x, q[i].y);
     background(0);
-    beginShape();
-    for (let i = -width/2; i < width; i++) {
-        vertex(i, f(i));
-    } endShape();
+    
+    if (p && p.length > 1) {
+        beginShape();
+        for (let i = -width/2; i < width; i++) {
+            vertex(i, f(i));
+        } endShape();
+    }
 
     fill(255);
     for (let i = 0; i < p.length; i++) {
