@@ -8,7 +8,6 @@
         <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
     </head>
     <body>
-        <main></main>
         <style>
           div {
               display: inline-block;
@@ -16,15 +15,19 @@
               height: 100%;
               vertical-align: middle;
               text-align: center;
-              border: 3px dashed #1c87c9;
           }
         </style>
-        <div>
-            <button onclick="popo()" name="button", class="btn btn-success", id="button">UNDO</button>
-            <p>
-                CLICK TO ADD, PRESS 'X' TO DELETE <br>
-                (the maximum number of points is 8) 
-            </p>
+        <div style = "border: 3px dashed #1c87c9;">
+            <div>
+                <p>
+                    CLICK TO ADD, PRESS 'X' TO DELETE <br>
+                    (the maximum number of points is 8) 
+                </p>
+            </div>
+            <main></main>
+            <div>
+                <button onclick="popo()" name="button", class="btn btn-success", id="button">UNDO</button>
+            </div>
         </div>
         <script src="pp.js"></script>
     </body>
