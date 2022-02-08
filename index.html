@@ -15,19 +15,26 @@
               width: 100%;
               text-align: center;
           }
-            
-          button {
-              width: 300;
-              height: 250;
+
+          h3 {
+              font-size: 50px;
+          }
+
+          #butt {
+              width: 30%;
+              height: 10%;
+              font-size: 50px;
           }
         </style>
-        <div id = "dv" style = "border: 10px dashed #1c87c9;">
+        <div id = "dv" style = "border: 20px dashed #1c87c9;">
             <h3>
-                CLICK TO ADD, PRESS 'X' TO DELETE <br>
-                (the maximum number of points is 8)
+                اضغط لاضافة نقطة <br>
+            </h3>
+            <h3 style = "color:red;">
+                (الحد الاقصى ٨)
             </h3>
             <main></main>
-            <button onclick="popo()" name="button", class="btn btn-success", id="button">UNDO</button>
+            <button onclick="popo()", class="btn btn-success" id = "butt">حذف نقطة</button>
             <script src="junk.js"></script>
         </div>
     </body>
