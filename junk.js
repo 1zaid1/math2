@@ -1,4 +1,4 @@
-let p = [], q = [], dx,dy;
+let p = [], q = [], dx, dy;
 function Point(x, y) {
     this.x = x;
     this.y = y;
