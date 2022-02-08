@@ -129,7 +129,6 @@ function setup() {
     stroke(255);
     noFill();
     background(0);
-    frameRate(10);
 }
 
 function trm() {
