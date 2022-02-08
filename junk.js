@@ -117,14 +117,14 @@ function update() {
 function setup() {
     cnv = createCanvas(300, 300);
     let canv = document.getElementById(cnv.id());
-    document.getElementById("dv").style.height = window.innerHeight-100+"px";
+    document.getElementById("dv").style.height = window.innerHeight-50+"px";
     document.getElementById("dv").style.width = window.innerWidth+"px";
     canv.style = document.getElementById("dv").style;
     canv.style.left = window.innerWidth/2 - width/2 + "px";
     dx = window.innerWidth/2 - width/2;
     canv.style.top = window.innerHeight/2 - height/2 + "px";
     dx = window.innerHeight/2 - height/2;
-    canv.width = 300; canv.height = 300;
+    canv.width = 500; canv.height = 500;
     translate(width/2, height/2);
     stroke(255);
     noFill();
