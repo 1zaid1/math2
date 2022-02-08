@@ -65,9 +65,23 @@ function f(x) {
     } return ans;
 }
 
+function bg() {
+    background(255);
+    let res = width/10;
+    stroke(200);
+    for (let i = 0; i <= res; i++) {
+        line(res*i, 0, res*i, height);
+        line(0, res*i, width, res*i);
+    } stroke(0);
+    line(0, height/2, width, height/2)
+    line(width/2, 0, width/2, height);
+
+    stroke('red');
+}
+
 function render() {
     // for (let i = 0; i < q.length; i++) console.log(q[i].x, q[i].y);
-    background(0);
+    bg();
 
     if (p && p.length > 1) {
         beginShape();
@@ -76,10 +90,16 @@ function render() {
         } endShape();
     }
 
-    fill(255);
+    fill('red');
     for (let i = 0; i < p.length; i++) {
         ellipse(p[i].x, p[i].y, 5);
     } noFill();
+}
+
+function trm() {
+    for (let i = 0; i < p.length; i++) {
+        for (let j = i+1; j < p.length; j++) if (p[j].x == p[i].x) {p.splice(j, 1);}
+    }
 }
 
 function update() {
@@ -104,6 +124,7 @@ function update() {
             v[j][i] = v[j][n];
             v[j][n] = tmp;
         }
+
         let m = new Matrix(v, n, n);
         q.push(new Point(det(m)/pp, n-i-1));
         for (let j = 0; j < v.length; j++) {
@@ -125,24 +146,21 @@ function setup() {
 
     document.getElementById("dv").style.height = window.innerHeight-100+"px";
     document.getElementById("dv").style.width = window.innerWidth+"px";
-    translate(width/2, height/2);
-    stroke(255);
+    stroke(0);
     noFill();
-    background(0);
-}
-
-function trm() {
-    for (let i = 0; i < p.length; i++) {
-        for (let j = i+1; j < p.length; j++) if (p[j].x == p[i].x) {p.splice(j, 1);}
-    }
+    bg();
+    frameRate(10);
+    translate(width/2, height/2);
 }
 
 function mousePressed() {
     if (mouseX < 0 || mouseY < 0 || mouseX  > width || mouseY > height) return;
     if (p.length == 8) return;
-    p.push(new Point(mouseX, mouseY));
+    let kra = true;
+    for (let i = 0; i < p.length; i++) if (dist(p[i].x, p[i].y, mouseX, mouseY) <= 5) kra = false;
+    if (kra) p.push(new Point(mouseX, mouseY));
     trm();
-    background(0);
+    bg();
     update();
     render();
 }
